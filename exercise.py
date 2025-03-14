@@ -156,7 +156,7 @@ names =[15, 'Ebun', 'Tayo', 78, 'Tunji']
 
 def bad_data_checker(customer_names):
     """
-    A function that yield only inteegr values from a list 
+    A function that yield only integer values from a list 
 
     Args:
         A list containing integers and string
