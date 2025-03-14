@@ -1,4 +1,5 @@
-# Return the First name
+
+# Task 1 (Return the First name)
 
 name = 'Titilope Olatunji'
 
@@ -60,11 +61,11 @@ name  = 'Titilope Olatunji'
 print(full_name(name))
 
 
-# Return list with the same naming convention
+# Task 2 (Return list with the same naming convention)
 
-names= ['first name', 'last_name', 'date of birth']
+# data= ['first name', 'last_name', 'date of birth']
 
-def name_dob(name_x):
+def name_dob(names):
     """
     This is a list of string with different naming convention, 
     transform the list to have the same naming convention
@@ -80,11 +81,11 @@ def name_dob(name_x):
             result.append(name)
     return result
 
-names= ['first name', 'last_name', 'date of birth']
-print(name_dob(names))
+data= ['first name', 'last_name', 'date of birth']
+print(name_dob(data))
 
 
-# Return the list of names that start with capital letter and ends with 'a'
+# Task 3 (Return the list of names that start with capital letter and ends with 'a')
 
 list_of_names =['Mayowa', 'chizoba', 'Chigozie']
 
@@ -101,7 +102,7 @@ def extract_names(names):
     """
     result_with_capital_letter =[]
     result_end_with_a=[]
-    for name in list_of_names:
+    for name in names:
         if name[0].isupper() and name[1].islower():
             result_with_capital_letter.append(name)
             if not name.endswith('a'):
@@ -119,7 +120,7 @@ list_of_names =['Mayowa', 'chizoba', 'Chigozie']
 print(extract_names(list_of_names))
 
 
-# Raises an error for an invalid name
+# Task 4 (Raises an error for an invalid name)
 
 names=['Wofai', 'Zainab', 'A4atullah']
 
@@ -135,7 +136,7 @@ def customers_name(valid_names):
         Raises a ValueError with invalid name
     """
     result=[]
-    for name in names:
+    for name in valid_names:
         if not name.isalpha():
             result.append(name)
             raise ValueError(f"The name {name} is not a valid name")
@@ -150,4 +151,25 @@ except ValueError as a:
 
 
 
+# Task 5 (Returns bad entry from a list(integer values))
+names =[15, 'Ebun', 'Tayo', 78, 'Tunji']
+
+def bad_data_checker(customer_names):
+    """
+    A function that yield only inteegr values from a list 
+
+    Args:
+        A list containing integers and string
+    Yield:
+        Integers found in the list
+    
+    """
+    for name in customer_names:
+        if type(name) != str:
+            yield(name)
+
+x = bad_data_checker(names)
+
+for i in x:
+    print(i)
 
