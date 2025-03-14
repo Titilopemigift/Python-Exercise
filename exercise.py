@@ -168,8 +168,8 @@ def bad_data_checker(customer_names):
         if type(name) != str:
             yield(name)
 
-x = bad_data_checker(names)
+yield_name = bad_data_checker(names)
 
-for i in x:
+for i in yield_name:
     print(i)
 
