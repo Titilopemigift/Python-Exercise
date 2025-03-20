@@ -9,7 +9,7 @@ response.json().keys()
 
 data = response.json()["results"]
 data
-
+#Male and Female list 
 gender =[item["gender"]for item in data]
 print(gender)
 
@@ -19,6 +19,7 @@ for identity in gender:
     if identity == "male":
         male_gender.append(identity)
 print (male_gender)
+
 #Female list
 female_gender =[]
 for identity in gender:
