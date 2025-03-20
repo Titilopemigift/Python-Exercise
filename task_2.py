@@ -12,3 +12,5 @@ data
 
 competition_names = [item["name"] for item in data]
 print(competition_names)
+
+

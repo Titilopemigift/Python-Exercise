@@ -95,10 +95,10 @@ response = {'apiVersion': '2.0',
 response.keys()
 
 jobs =response["jobs"]
-jobs
+print(jobs)
 
 jobtitle = [item["jobTitle"]for item in jobs]
-jobtitle
+print(jobtitle)
 
 
 senior_role=[]

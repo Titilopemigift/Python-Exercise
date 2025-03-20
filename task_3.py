@@ -30,11 +30,11 @@ print (female_gender)
 #Extract Date of Birth(DOB)
 
 dob = [item["dob"] ["date"]for item in data]
-dob
+print(dob)
 
 #Concatenate first name and last name
 names= [item["name"] for item in data]
-names
+print(names)
 
 full_name = [item["first"]+ " " + item["last"] for item in names]
-full_name
+print(full_name)
