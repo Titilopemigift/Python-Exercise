@@ -16,24 +16,30 @@ response = requests.get(baseurl, params= params)
 response.status_code
 
 if response.status_code ==200:
-    result= response.json()
-    data = result.get('response',{}).get('results',[])
-print(data)
+    data= response.json()
+    articles = data['response']['results']
 
-def articles(country):
+
+def nigeria_2025():
     list_of_articles=[]
-    for article in country:
-        if 'Nigeria' or 'nigeria' in country:
-            list_of_articles.append(article)
-            return list_of_articles
+    for article in articles:
+            data_list ={
+                "Title": article["webTitle"],
+                "URL": article["webUrl"],
+                "Section_name": article["sectionName"],
+                "Publication_date": article["webPublicationDate"]
+            }
+            list_of_articles.append(data_list)
+    return list_of_articles
 
-country = data
-
-print(articles(country))
-
+result = nigeria_2025()
+print(result)
 
 
-df = pd.DataFrame(country)
+
+
+
+df = pd.DataFrame(result)
 print(df)
 
 
