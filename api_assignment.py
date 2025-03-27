@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 
+url = 'https://content.guardianapis.com/search?api-key=test&q=Nigeria&from-date=2025-01-01&to-date=2025-03-25&page-size=100'
 
 baseurl = 'https://content.guardianapis.com/search'
 
