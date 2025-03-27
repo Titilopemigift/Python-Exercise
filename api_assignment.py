@@ -15,17 +15,21 @@ params={
 response = requests.get(baseurl, params= params)
 response.status_code
 
-result= (response.json()['response']['results'])
+result= response.json()
 print(result)
 
-def articles(keyword):
+if response.status_code ==200:
+    data = result.get('response',{}).get('results',[])
+print(data)
+
+def articles(country):
     list_of_articles=[]
-    for article in keyword:
+    for article in country:
         if 'Nigeria' or 'nigeria' in country:
             list_of_articles.append(article)
             return list_of_articles
 
-country = result
+country = data
 
 print(articles(country))
 
