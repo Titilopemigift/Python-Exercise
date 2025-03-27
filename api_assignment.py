@@ -15,10 +15,8 @@ params={
 response = requests.get(baseurl, params= params)
 response.status_code
 
-result= response.json()
-print(result)
-
 if response.status_code ==200:
+    result= response.json()
     data = result.get('response',{}).get('results',[])
 print(data)
 
